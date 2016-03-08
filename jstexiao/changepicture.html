@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片切换</title>
+	<style>
+	/*初始化*/
+		*{margin:0;padding:0;}
+	/*清除浮动*/
+		.clearfix:before,.clearfix:after{content:" ";display: table;}
+		.clearfix:after{clear: both;}
+		.clearfix{zoom:1;}
+	/*样式*/
+		img{
+			width: 400px;/*设置图片的宽度*/
+			height: 300px;/*设置图片的高度*/
+		}
+		#list li{
+			width: 40px;
+			height: 40px;
+			border:1px solid #ccc;
+			line-height: 40px;
+			text-align: center;
+			float: left;
+			list-style:none;
+		}
+		#list li a{
+			text-decoration: none;
+			font-size: 20px;
+			font-weight: bold;
+			color: #000;
+		}
+
+	</style>
+</head>
+<body>
+
+	<img id="pic" src="1.jpg" alt="此图片无法加载">
+
+	<ul id="list" class="clearfix">
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+	</ul>
+	<!-- <input type="button" id="btn1" value="1">
+	<input type="button" id="btn2" value="2">
+	<input type="button" id="btn3" value="3">
+	<input type="button" id="btn4" value="4"> -->
+
+
+	<!-- js部分 -->
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#list li").click(function(){//获取按钮对象，绑定click事件
+			var num=$(this).index();//获取按钮的索引号，index()获取索引的方法
+			var pic=(num+1)+".jpg";//获取每个图片的路径
+			$("#pic").attr("src",pic); //attr()改变属性的方法
+			$(this).css("background-color","red").siblings().css("background-color","white");
+			//this指"#list li",css()改变样式的方法,siblings()找同级元素的方法
+		})
+
+	</script>
+</body>
+</html>

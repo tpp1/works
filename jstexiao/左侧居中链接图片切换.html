@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		#pic img{
+			height: 900px;
+		}
+		#list{ 
+			width:50px;
+			height:250px;
+			position:absolute;
+			left:0; 
+			top:200px;}
+		#list li a{
+			width:50px;
+			height:50px;
+			line-height:50px;
+			float:left;
+			display:block;
+			text-align:right;}
+		#list .lanren1{ background:#305790;}
+		#list .lanren2{ background:#2BA9D2;}
+		#list .lanren3{ background:#CF4C3A;}
+		#list .lanren4{ background:#4698CA;}
+		#list .lanren5{ background:#F9694E;}
+		#pic img{
+			float:left;
+			/*清除图片间默认的间距方法一：图片写在一行上；方法二：图片写float:left;*/
+		}
+	</style>
+</head>
+<body>
+	<ul id="list">
+		<li><a class="lanren1" href="#"><img src="images/lanren01.jpg" alt="此图片无法加载"></a></li>
+		<li><a class="lanren2" href="#"><img src="images/lanren02.jpg" alt="此图片无法加载"></a></li>
+		<li><a class="lanren3" href="#"><img src="images/lanren03.jpg" alt="此图片无法加载"></a></li>
+		<li><a class="lanren4" href="#"><img src="images/lanren04.jpg" alt="此图片无法加载"></a></li>
+		<li><a class="lanren5" href="#"><img src="images/lanren05.jpg" alt="此图片无法加载"></a></li>
+	</ul>
+	<div id="pic">
+		<ul>
+			<li><a href="#"><img src="images/banner1.jpg" alt="此图片无法加载"></a></li>
+			<li><a href="#"><img src="images/banner2.jpg" alt="此图片无法加载"></a></li>
+			<li><a href="#"><img src="images/banner3.jpg" alt="此图片无法加载"></a></li>
+			<li><a href="#"><img src="images/banner4.jpg" alt="此图片无法加载"></a></li>
+			<li><a href="#"><img src="images/banner5.jpg" alt="此图片无法加载"></a></li>
+		</ul>	
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#list li").click(function(){
+			var index=$(this).index();
+			var margintop=index*(-900);
+			$("#pic").animate({"margin-top":margintop},500);
+		})
+		$('#list li a').hover(function(){
+			$(this).stop().animate({width:'65px'},300);	
+		},function(){
+			$(this).stop().animate({width:'50px'},300);	
+		});
+
+	</script>
+</body>
+</html>

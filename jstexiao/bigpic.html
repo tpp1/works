@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<style type="text/css">
+* {margin:0;padding:0;}
+#list li {
+	list-style:none;
+	float:left;
+}
+#list img {
+	width:240px;
+    height:160px;
+	margin:30px 5px;    /*用padding会导致鼠标还没放到图片上就出现放大*/
+}
+#bigpic {
+	border:#000 1px solid;
+	padding:2px;
+	background:#FFF;
+	position:absolute;      /*【position:absolute】意思是绝对定位，他默认参照浏览器的左上角*/
+	display:none;  /*display:none是隐藏掉bigpic，不隐藏它会闪动*/
+}
+
+
+</style>
+</head>
+
+<body>
+<ul id="list">
+  <li>
+  	<a href="images/aa.jpg">
+  		<img src="images/aa.jpg" />
+  	</a>
+  </li>
+  <li><a href="images/bb.jpg"><img src="images/bb.jpg" /></a></li>
+  <li><a href="images/cc.jpg"><img src="images/cc.jpg" /></a></li>
+  <li><a href="images/dd.jpg"><img src="images/dd.jpg" /></a></li>
+</ul>
+<script type="text/javascript"  src="jquery-1.11.1.js"></script>
+<script type="text/javascript">
+
+/*若jquery语句放在<head>里面，应在前面加上$(function)(){}*/
+$("#list li a").mouseover(function(){
+	var bigpic ="<div id='bigpic'><img src='"+this.href+"'></div>";
+	$("body").append(bigpic);
+	$("#bigpic").show("fast");
+}).mousemove(function(event){
+	$("#bigpic").css({
+		"top":(event.pageY+10)+"px",   /*使用margin-top隐藏的bigpic会闪动*/
+		"left":(event.pageX+20)+"px",
+	});
+	$("#x").text(event.pageX+20);
+	$("#y").text(event.pageY+10);
+}).mouseleave(function(){
+	$("#bigpic").remove();
+})
+
+
+
+
+</script>
+
+
+</body>
+</html>

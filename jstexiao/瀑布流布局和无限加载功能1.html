@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>瀑布流布局和无限加载功能</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		body{
+			background-color: #ddd;
+		}
+		#wrapper{
+			width: 1200px;
+			margin: 0 auto;
+		}
+		#wrapper .list li img{
+			width: 260px;
+			margin:10px;
+			border:10px solid #fff;
+			border-radius:8px;
+			box-shadow:0 0 11px #666;
+		}
+		#wrapper .list{
+			float: left;
+		}
+		/*@-webkit-keyframes shade{
+			from{opacity:1;}
+			15%{opacity:0.9;}
+			to{opacity:1;}
+		}
+		@-moz-keyframes shade{
+			from{opacity:1;}
+			15%{opacity:0.9;}
+			to{opacity:1;}
+		}
+		@-ms-keyframes shade{
+			from{opacity:1;}
+			15%{opacity:0.9;}
+			to{opacity:1;}
+		}
+		@-o-keyframes shade{
+			from{opacity:1;}
+			15%{opacity:0.8;}
+			to{opacity:1;}
+		}
+		@keyframes shade{
+			from{opacity:1;}
+			15%{opacity:0.9;}
+			to{opacity:1;}
+		}
+		#wrapper .list li img:hover{
+			-webkit-animation:shade 3s ease-in-out 1;
+			-moz-animation:shade 3s ease-in-out 1;
+			-ms-animation:shade 3s ease-in-out 1;
+			-o-animation:shade 3s ease-in-out 1;
+			animation:shade 3s ease-in-out 1;
+		}*/
+
+	</style>
+</head>
+<body>
+	<div id="wrapper">
+		<div id="test">
+			<ul class="list">
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/b.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/e.jpg" alt="此图片无法加载"></li>
+			</ul>
+			<ul class="list">
+				<li><img src="images/b.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/e.jpg" alt="此图片无法加载"></li>
+			</ul>
+			<ul class="list">
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/e.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>	
+			</ul>
+			<ul class="list">
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/b.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+			</ul>
+		</div>
+		<!-- <div id="test1">
+			<ul class="list">
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/b.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/e.jpg" alt="此图片无法加载"></li>
+			</ul>
+			<ul class="list">
+				<li><img src="images/b.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/e.jpg" alt="此图片无法加载"></li>
+			</ul>
+			<ul class="list">
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/e.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/b.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>	
+			</ul>
+			<ul class="list">
+				<li><img src="images/d.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/b.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/c.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/e.jpg" alt="此图片无法加载"></li>
+				<li><img src="images/a.jpg" alt="此图片无法加载"></li>
+			</ul>
+		</div> -->
+	</div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		// $(window).scroll(function(){
+		// 	if($(document).height()-$(this).scrollTop()-$(this).height()<50){
+		// 		$("#test").append($("#test1").html());
+		// 	}
+		// })
+		//获取最短的ul，将图片放在其后面
+		function getMinUl(){
+			var $ul = $("ul");//声明变量
+			var $minUl = $ul.eq(0);
+			//遍历每个ul ,index为ul的索引，elem为ul
+			$ul.each(function(index,elem){
+				if($(elem).height()<$minUl.height()){
+					$minUl=$(elem);
+				}
+			})
+			return $minUl;
+		}
+		$(window).scroll(function(){
+			//调用getMinUl()函数，获取最短的ul
+			$minUl=getMinUl();
+			if($(this).scrollTop()+$(this).height()>=$minUl.height()){
+				//当最短的ul高度比窗口滚出去的高度+浏览器高度大时加载新图片
+				for(var i=0;i<5;i++){
+					var num=1;
+					var num=(Math.random())*4+1;// 取随机数
+					var num=Math.round(num);//四舍五入
+					console.log(num)
+					var li="<li><img src=images/"+num+".jpg></img></li>"
+					$minUl.append(li);//在最短的ul中添加图片
+				}	
+			}
+		})
+
+	</script>
+	
+</body>
+</html>

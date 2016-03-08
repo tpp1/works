@@ -1,0 +1,67 @@
+.clearfix:before,.clearfix:after{content: "";display: table;}
+.clearfix:after{clear: both;}
+.clearfix{zoom:1;clear: both;}
+
+*{margin:0;padding:0;}
+body{position: relative;}
+li{list-style: none;}
+a{text-decoration: none;}
+
+/*header部分*/
+header{background-color: #fff;}
+.headinner,.maininner,.footerinner{
+	width: 1000px;
+	margin: 0 auto;
+}
+.headinner{position: relative;}	
+.navlist{
+	width: 580px;
+	float: left;
+}
+.navlist ul li a{
+	color:#000;
+}
+.navform{
+	width: 420px;
+	float: right;
+}
+.navform input{
+	margin-left:145px;
+}
+.navform .btn-default{
+	position: absolute;
+	top:7px;
+	right:5px;
+}
+/*banner部分*/
+#banner .item{
+	height: 700px;
+}
+/*main部分*/
+#main{
+	background-image: url(../images/mainbg.jpg);
+	padding-top:30px;
+	margin-top: 10px;
+}
+/*footer部分*/ 
+.footerinner{
+	padding:30px 0;
+}
+.footerinner article{
+	width: 580px;
+	float: left;
+}
+.footerinner nav{
+	width: 420px;
+	float: right;
+}
+.footerinner nav ul{
+	float: left;
+	margin-left:15px;
+}
+.footerinner nav ul li:first-child a{
+	color: #000;
+	font-size: 16px;
+	font-weight: bolder;
+}
+

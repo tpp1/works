@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin:0;
+			padding:0;
+			list-style: none;
+		}
+		body{
+			height: 2000px;/* 显示出滚轮，要设置很高的高度 */
+		}
+		#box{
+			height: 200px;
+			background-color: #ccc;
+		}
+		#list li{
+			float: left;
+		}
+		
+		#list li a{
+			height: 50px;
+			line-height: 50px;
+			text-decoration: none;
+			display: block;
+			color:#000;
+			font-size: 30px;
+			padding:0 15px;
+			border:1px solid #ccc;
+		}
+		.active{
+			position: fixed;
+			top:0;
+		}
+		.addbox{
+			width: 200px;
+			height: 100px;
+			background-color: red;	
+			position: fixed;/*固定返回顶部的按钮*/
+			bottom:50px;
+			right:50px;
+			text-align: center;
+			line-height: 100px;
+			border-radius: 30px;
+
+
+		}
+	</style>
+</head>
+<body>
+	<div id="box"></div>
+	<ul id="list">
+		<li><a href="#">一年级</a></li>
+		<li><a href="#">二年级</a></li>
+		<li><a href="#">三年级</a></li>
+		<li><a href="#">四年级</a></li>
+	</ul>
+	<div id="box1"><h1>返回顶部</h1></div>
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#box1").hide();//开始box1隐藏
+		$(window).scroll(function(){//当滚动条滚动时
+			 if($(this).scrollTop()>200){//滚动的top值大于200时
+			 	$("#list").addClass("active");//导航栏固定在页面顶部
+			 	$("#box1").addClass("addbox").show();
+			 }else{
+			 	$("#list").removeClass("active");//导航栏不固定在页面顶部
+			 	$("#box1").removeClass("addbox").hide();
+			 } 
+		});
+		$("#box1").click(function(){
+			$(window).scrollTop(0);
+		})
+	</script>
+</body>
+</html>

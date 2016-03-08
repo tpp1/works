@@ -1,0 +1,80 @@
+header{
+	border-bottom:5px solid #e5378d;
+}
+.header-inner,.main-inner{
+	width: 980px;/*980/1349=72.6464%*/
+	margin: 0 auto; 
+	background-color: #fff;
+}
+.main{
+	background-color: #f5f3f1 ;
+}
+.main-inner .left,.main-inner .right{
+	width: 490px;/*490/980=50%;*/
+	float: left;
+}
+.main-inner .left img{
+	padding:40px 105px 40px 40px;/*105/490=21.4285% 40/490=8.1632%*/
+}
+.main-inner .right{margin-top:70px;}
+.main-inner .right .login-box{
+	width: 310px;/*350/490*/
+	margin: 0 auto;
+	background-color: #f4f5f5;
+	border:2px solid #cccdcd;
+	padding:20px;/*20/350*/
+}
+.main-inner .right .login-box .login-tab span{
+	display: block;
+	color: #fff;
+	font-size: 14px;
+	width: 125px;/*125/350*/
+	text-align: center;
+	line-height: 30px;
+	background-color: #e7378c;
+	border-radius: 10px;
+	margin: 0 auto;
+}
+.main-inner .right .login-box .login-tab{	
+	padding-bottom:15px; border-bottom:1px dotted #cccdcd;}
+.main-inner .right .login-box .login-content ul li{
+	text-indent: 40px;
+	font-size: 12px;
+	margin-top:20px;
+}
+.main-inner .right .login-box .login-content ul li span,.main-inner .right .login-box .login-content ul li a{
+	vertical-align: middle;
+}
+.main-inner .right .login-box .login-content ul li input{border:1px solid #e2e0dd;}
+.main-inner .right .login-box .login-content ul li:first-child input{
+	font-size: 13px;
+	color: #d0cbc9;
+}
+.main-inner .right .login-box .login-content ul li.suojin{text-indent: 52px;}
+.main-inner .right .login-box .login-content ul li.suojin input{margin-right:3px;}
+.main-inner .right .login-box .login-content ul li.suojin a:hover{color:#F88200;}
+.main-inner .right .login-box .login-content ul li:last-child{text-indent: 85px;margin-top:10px;}
+.main-inner .right .login-box .login-content ul li:last-child input{vertical-align: middle;}
+.main-inner .right .login-box .login-content p a{
+	display: block;
+	width: 35px;
+	text-align: center;
+	line-height: 30px;
+	background-color: #e5378e;
+	padding:0 25px;
+	font-size: 14px;
+	color: #fff;
+	float: left;
+	margin-right:10px;
+}
+.main-inner .right .login-box .login-content p a:first-child{margin-left:70px;}
+.main-inner .right .login-box .login-content p{margin-top:32px;}
+.main-inner .right .login-box .login-content{
+	border-bottom:1px dotted #cccdcd;
+    padding-bottom:10px;}
+.main-inner .right .login-box .login-number p{
+	margin-left: 40px;
+	font-size: 12px;
+	line-height: 3em;
+}
+.main-inner .right .login-box .login-number p img{margin-right:10px;}

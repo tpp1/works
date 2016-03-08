@@ -1,0 +1,91 @@
+header{
+	border-bottom:5px solid #e5378d;
+}
+.header-inner,.main-inner{
+	width: 980px;/*980/1349=72.6464%*/
+	margin: 0 auto; 
+	background-color: #fff;
+}
+.main{
+	background-color: #f5f3f1 ;
+}
+.main-inner .left,.main-inner .right{
+	width: 490px;/*490/980=50%;*/
+	float: left;
+}
+.main-inner .left img{
+	padding:40px 105px 40px 40px;/*105/490=21.4285% 40/490=8.1632%*/
+}
+.main-inner .right{
+font-size: 12px;}
+.main-inner .right .user-r{
+	width: 400px;
+	background-color: #f4f4f4;
+	border:1px solid #cccdcd;
+	padding:20px;
+	margin:20px 50px 70px 0;
+}
+.main-inner .right .user-r h2{
+	color: #666666;
+	font-size: 16px;
+}
+.main-inner .right .user-r form{
+	padding:20px 0 10px 15px;
+}
+.main-inner .right .user-r form label{
+	vertical-align: middle;
+}
+.main-inner .right .user-r form label.suojin{
+	text-indent: 24px;
+	display: inline-block;
+}
+.main-inner .right .user-r form label.suojin1{
+	text-indent: 12px;
+	display: inline-block;
+}
+.main-inner .right .user-r form input{
+	border:1px solid #e2e0dd;
+}
+.main-inner .right .user-r form p{
+	color:#c0c0c0;
+	text-indent: 65px;
+	margin-top:3px;
+}
+.main-inner .right .user-r form p.last-p{
+	text-indent: 60px;
+}
+.main-inner .right .user-r form .txt{
+	margin-top:20px;
+}
+.main-inner .right .user-r form .btn{
+	margin-left:10px;
+	color: #C60;
+}
+.main-inner .right .user-r form .agree{
+	color: #a90044;
+}
+.main-inner .right .zhuce a{
+	display: block;
+	margin: 0 auto;
+	width: 45px;
+	background-color: #e4388e;
+	color: #fff;
+	font-size: 14px;
+	margin-left:148px;
+	padding:7px 20px;
+}
+.main-inner .right .lianxi{margin-top:10px;}
+.main-inner .right .lianxi p{
+	text-indent: 30px;
+	font-weight: bold;
+	line-height: 2em;
+}
+.main-inner .right .lianxi p a{
+	text-decoration: underline;
+	color: #e4388e;
+}
+.main-inner .right .lianxi p a:hover,.main-inner .right .user-r form .agree:hover{color: #D76D03;}
+.main-inner .right .lianxi p img{
+	margin-right:5px;
+	margin-top:5px;
+}

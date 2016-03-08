@@ -1,0 +1,108 @@
+.header-inner,.main-inner,.footer-inner{
+	margin: 0 auto;
+}
+.header,.footer{
+	background-color: #000000;
+}
+.header-inner h1,.nav{
+	 position: absolute;
+}
+.header-inner{
+	width: 970px;
+	position: relative;
+}
+.logo{
+	padding: 25px 0px;
+}
+.header-inner h1{
+	font-family: Plantagenet Cherokee;
+	font-size: 46px;
+	text-shadow: -1px 0px 2px #f7d1b9;
+	color: #da4b00;
+	left: 110px;
+	top: 42px;
+}
+.header-inner span{
+	color: #b2b2b2;
+	text-shadow: -1px 0px 2px #f8f8f8;
+}
+.nav{
+	left: 519px;
+	top: 65px;
+}
+a{
+	font-size: 12px;
+	font-weight: bold;
+	font-family: Lao UI;
+	color: #7f7f7f;
+	text-decoration: none;
+}
+a:hover{color: #cc2700;;}
+.about{
+	color: #cc2700;
+}
+.header li{
+	float: left;
+	list-style: none;
+	padding-right: 28px;
+}
+
+.main{
+	background-image: url(../images/main-bg_03.gif);
+}
+.main-inner{
+	width: 940px;overflow: hidden;
+}
+.main-top{
+	height: 180px;
+	padding: 40px 0px;
+}
+.join,.spring{
+	padding-right: 10px;
+}
+.content{
+	width: 600px;
+	float: left;
+}
+.sidebar{
+	width: 300px;
+	float: right;
+}
+
+/*more按钮*/
+
+.more,.more1{
+	 width: 106px;
+     height: 41px;
+     text-align: center;
+     line-height: 41px;
+     background-color: #da4a00;
+     border-radius: 8px;
+     font-size: 18px;
+     font-family: Mangal;
+     color: #fff;
+ }
+ .footer-inner{
+ 	width: 940px;
+ 	height: 150px;
+ 	color: #ffffff;
+ }
+ .footer-inner .top{
+ 	padding:37px 0 0 230px;
+ }
+.footer-inner .bottom{
+	padding: 11px 0 0px 174px;
+}
+.footer-inner span{
+	text-decoration: underline;
+	color: #cc2709;
+}
+.footer-iner-left{float: left;}
+.footer-iner-right{
+	padding:49px 0 0 723px;
+}
+p {
+    color: #7d7770;
+    font-family: Lao UI;
+}
+

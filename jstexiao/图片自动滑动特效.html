@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>图片自动滑动特效</title>
+	<style>
+		*{margin:0;padding:0;list-style: none;}
+		img{
+			width: 500px;
+			height: 400px;
+		}
+		.box{
+			width: 500px;
+			overflow: hidden;
+		}
+		.show{
+			width: 2500px;
+			height: 400px;		
+			position: relative;
+		}
+		ul{
+			position: absolute;
+			left: 240px;
+			top:349px;
+		}
+		ul li{
+			float: left;
+			height: 50px;
+			border:1px solid #ccc;
+		}
+		ul li a{
+			display: block;
+			text-align: center;
+			line-height: 50px;
+			width: 50px;
+			text-decoration: none;	
+			color:#000;
+		}
+		.active{
+			background-color: red;
+		}
+	</style>
+</head>
+<body>
+	<div class="box">
+		<div class="show">
+			<img src="images/1.jpg" alt="此图片无法加载"><img src="images/2.jpg" alt="此图片无法加载"><img src="images/3.jpg" alt="此图片无法加载"><img src="images/4.jpg" alt="此图片无法加载"><img src="images/5.jpg" alt="此图片无法加载">
+		</div>
+	</div>
+	<ul>
+		<li><a href="#">1</a></li>
+		<li><a href="#">2</a></li>
+		<li><a href="#">3</a></li>
+		<li><a href="#">4</a></li>
+		<li><a href="#">5</a></li>
+	</ul>
+	<script type="text/javascript" src="jquery-1.11.1.js"></script>
+	<script>
+
+		 $("li").click(function(){
+		 	var index=$(this).index();
+		 	var marginleft=index*(-500);
+		 	$(".show").animate({"margin-left":marginleft},500);
+		 	$(this).addClass("active").siblings().removeClass("active");
+		 })
+		var n = 0;
+		function start(){
+			n = n == 5 ? 0 : n;
+			console.log(n);
+			var marginleft=n*(-500);
+			n++;
+			$(".show").animate({"margin-left":marginleft},500);
+			$("li").eq("+n+").addClass("active").siblings().removeClass("active");
+
+		}
+		var t = setInterval(start,2000);
+
+
+	</script>
+</body>
+</html>

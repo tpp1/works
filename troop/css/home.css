@@ -1,0 +1,158 @@
+
+.banner{
+	background-image: url(../images/banner-dg_07.gif);
+}
+.banner-inner{
+	width: 940px;
+	height: 348px;
+	margin: 0 auto;
+	position: relative;
+}
+.banner-inner-left h1{
+	font-size: 22px;
+	color: #ffffff;
+}
+.banner-inner-left{
+	padding-top: 64px;
+	font-size: 14px;
+	color: #7d7770;
+	line-height: 1.7em;
+	float: left;
+}
+.main-inner{
+	/*height: 896px;//不应该设置高度的*/
+	overflow: hidden;
+}
+.eagles,.free {
+	color:#c52800;
+	text-decoration: underline;
+}
+.banner-inner-bottom{
+	width: 106px;
+	height: 41px;
+	background-color: #d53f00;
+	border-radius: 8px;
+	font-size: 26px;
+	line-height: 41px;
+	text-align: center;
+	margin-top: 26px;
+	color: #ffffff;
+}
+.banner-inner-right{
+	width: 336px;
+	height: 336px;
+	background-image: url(../images/bgc.png);
+	background-repeat: no-repeat;
+	background-position: -513px -15px;
+	position: absolute;
+	top:-31px;
+	right: -43px;
+}
+p,ul{
+	font-size: 14px;
+	line-height: 1.7em;
+    font-family: Lao UI;
+}
+.content-top p{
+	padding-top: 25px;
+	padding-left: 81px;
+}
+.content h1{
+	padding-top: 12px;
+	font-size: 26px;
+}
+.content h1,.lorem,.week,.stet{
+	color: #ffffff;
+}
+.week{
+	height: 11px;
+	background-color: #e15a00;
+	border-top-left-radius: 8px;
+	border-top-right-radius: 8px;
+	font-size: 4px;
+	line-height: 11px;
+}
+.date,.content-bottom img{
+	margin-top: 25px;
+}
+.date{
+	  	  float: left;
+}
+.day{
+	height: 49px;
+	background-color: #dcdcdc;
+	border-bottom-left-radius: 8px;
+	border-bottom-right-radius: 8px;
+	font-size: 28px;
+	font-weight: bold;
+	line-height: 49px;
+	color: #000000;
+}
+.week,.day{
+	width: 60px;
+	text-align: center;
+	font-family: Lao UI;
+}
+.content-top{
+	border-bottom: 1px dotted #454646;
+}
+.content-bottom img{
+	margin-left: 21px;
+	float: left;
+}
+.content-bottom p{
+	padding-top: 32px;
+	padding-left: 321px;
+}
+.adventures{
+	height: 48px;
+	width: 277px;
+	border-radius: 8px;
+	background-color: #000000;
+	line-height: 48px;
+	padding-left:23px;
+	color: #ffffff;
+	font-size: 20px;
+}
+.sidebar ul{
+	color: #ffffff;
+	line-height: 2.5em;
+	padding-top: 24px;
+}
+	
+.icon{      /*如何使虚线长度相同？？？*/
+	border-bottom: 2px dotted #454646;
+}
+.sidebar-bottom{
+	height: 232px;
+	background-color: #000000;
+	margin-top: 30px;
+	margin-bottom: 60px;
+}
+.sidebar-bottom h1,h2{
+		color: #ffffff;
+}
+.sidebar-bottom h1{
+	font-size: 15px;
+	padding: 20px 106px 15px 20px;
+}
+.sidebar-bottom h2{
+	font-weight: bold;
+    font-family: Lao UI;
+}
+.sidebar-bottom img{
+	padding: 0 20px 22px 20px;
+}
+.sidebar-bottom p,h2{
+	padding-left: 20px;
+}
+.more{
+	margin: 26px 0px 31px 81px;
+}
+.fa{
+	padding-top: 12px;
+}
+.content{
+	width: 619px;
+	}
+

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>表格的增加和删除</title>
+	<style>
+		table{
+			border-collapse: collapse;/*合并相邻的边框*/
+			margin-top:10px;
+		}
+		td{
+			width: 200px;
+			height: 40px;
+			border:1px solid #ccc;
+			text-align: center;/*设置文字居中*/
+		}
+		a{
+			display: block;
+			width: 200px;
+			height: 40px;
+			line-height: 40px;
+		}
+		tr:first-of-type{
+			background-color: #444;
+			color: #fff;
+		}
+		td:last-of-type a{
+			color: red;
+			text-decoration: none;
+		}
+
+	</style>
+</head>
+<body>
+	<input type="text" id="txt1">
+	<input type="text" id="txt2">
+	<input type="text" id="txt3">
+	<input type="text" id="txt4">
+	<input type="button" id="btn" value="添加">
+	<table>
+		<tr>
+			<td>姓名</td>
+			<td>年龄</td>
+			<td>性别</td>
+			<td>专业</td>
+			<td>删除</td>
+		</tr>
+		<tr>
+			<td>张三</td>
+			<td>17</td>
+			<td>男</td>
+			<td>计算机</td>
+			<td><a href="#">删除</a></td>
+		</tr>
+		<tr>
+			<td>李四</td>
+			<td>19</td>
+			<td>女</td>
+			<td>通信工程</td>
+			<td><a href="#">删除</a></td>
+		</tr>
+	</table>
+
+	<!-- js部分 -->
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$("#btn").click(function(){//当鼠标点击id名为btn的按钮时，绑定click事件
+			var name=$("#txt1").val();//定义一个名为name的变量;val()获取id名为txt1的变量值
+			var age=$("#txt2").val();//定义一个名为age的变量;val()获取id名为txt2的变量值
+			var sex=$("#txt3").val();//定义一个名为sex的变量;val()获取id名为txt3的变量值
+			var major=$("#txt4").val();//定义一个名为major的变量;val()获取id名为txt4的变量值
+	
+			var tdName="<td>"+name+"</td>";//定义一个名为tdName的变量并赋值为？
+			var tdAge="<td>"+age+"</td>";//定义一个名为tdAge的变量并赋值为？
+			var tdSex="<td>"+sex+"</td>";//定义一个名为tdSex的变量并赋值为？
+			var tdMajor="<td>"+major+"</td>";//定义一个名为tdMajor的变量并赋值为？
+			var move = "<td><a href='#'>删除</a></td>";//定义一个名为tdName的变量并赋值为删除
+
+			var td=tdName+tdAge+tdSex+tdMajor+move;
+			var tr="<tr>"+td+"</tr>";//定义一个名为tr的变量并赋值为？
+			$("table").append(tr);//给table添加一个变量名为tr的新元素，append()添加
+
+			$("a").click(function(){ //当鼠标点击a链接时，触发一个click事件
+				$(this).parent().parent().remove(); //删除tr那行，remove()删除
+		})
+
+		})
+		$("a").click(function(){  //同上
+				$(this).parent().parent().remove();//同上  
+		})
+	</script>
+</body>
+</html>

@@ -1,0 +1,68 @@
+.main-inner{
+	overflow: hidden;
+}
+.content{
+	float: left;
+}
+.content h1{
+	font-size: 27px;
+	color: #ffffff;
+	margin-top: 12px;
+}
+.content p,.sidebar p{
+	font-size: 14px;
+	line-height: 1.7em;
+}
+.content .first-paragraph{
+	padding-top: 30px;
+	padding-bottom: 25px;
+}
+.content .second-paragraph{
+	margin-top: 8px;
+}
+.content .third-paragraph{
+	padding-top: 10px;
+	padding-bottom: 27px;
+}
+.content span{
+	color: #ffffff;
+}
+.content img{
+	width: 220px;
+	height: 160px;
+	float: left;
+	padding-right: 21px;
+}
+.more{
+	margin-bottom: 64px;
+}
+.honor{
+	width: 278px;
+    height: 49px;
+    border-radius: 5px;
+    background-color: #101111;
+    color: #fff;
+    font-size: 20px;
+    font-family: Mangal;
+    line-height: 49px;
+    padding-left: 22px;
+   }
+.sidebar .consetetur{
+	padding-top: 33px;
+}
+.sidebar .consetetur,.sidebar ul{
+	padding-left: 21px;
+}
+.sidebar ul{
+	font-family: Lao UI;
+	color: #7f7f7f;
+	padding-top: 40px;
+	line-height: 2em;
+	font-size: 15px;
+}
+.sidebar span{
+	color: #ffffff;
+}
+.year{
+	border-bottom: 2px dotted #454646;
+}

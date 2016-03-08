@@ -1,0 +1,72 @@
+.main-inner{
+	/*height: 1156px;    //不应该设置高度 ？？？？？？？*/
+	position: relative;
+	overflow:hidden;
+}
+.content h1{
+	font-size: 27px;
+	color: #ffffff;
+	margin-top: 12px;
+}
+.content-top img{
+	padding: 30px 0 10px 0;}
+.content-bottom .picture{
+	padding: 30px 20px 0 0;
+}
+.content-bottom img{
+	padding-top: 30px;
+}
+.gallery{width: 278px;
+    height: 49px;
+    border-radius: 5px;
+    background-color: #101111;
+    color: #fff;
+    font-size: 20px;
+    font-family: Mangal;
+    line-height: 49px;
+    padding-left: 22px;
+   }
+.consetetur{
+	font-size: 14px;
+    color: #7f7f7f;
+    font-family: Mangal;
+    padding: 33px 0 29px 20px;}
+.more1{
+	margin: 0 174px 40px 20px;
+}
+.more{
+	margin-top: 20px;
+	margin-bottom: 60px;
+}
+.archive{
+    width: 278px;
+    height: 49px;
+    border-radius: 5px;
+    background-color: #101111;
+    color: #fff;
+    font-size: 20px;
+    font-family: Mangal;
+    line-height: 49px;
+    padding-left: 22px;
+    margin-left: 10px;
+   }
+.lorem{
+	padding-left: 40px;
+    padding-top: 33px;
+    font-size: 10px;
+    color: #7f7f7f;
+    font-family: Mangal;}
+.icon{      /*如何使虚线长度相同？？？*/
+	border-bottom: 2px dotted #454646;
+}
+.sidebar ul{
+	color: #ffffff;
+	line-height: 2.5em;
+}
+.fa{
+	padding-top: 8px;
+}
+.sidebar-bottom a{
+    color:#fff;
+}
+.sidebar-bottom a:hover{color: #d84400;}

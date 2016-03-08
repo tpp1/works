@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>下拉菜单</title>
+	<style>
+	/*初始化*/
+		*{margin:0;padding:0;}
+	/*清除浮动*/
+		.clearfix:before,.clearfix:after{content:" ";display: table;}
+		.clearfix:after{clear: both;}
+		.clearfix{zoom:1;}
+	/*样式*/
+		.nav li{
+			list-style: none;
+			width: 150px;
+			height: 40px;
+			line-height: 40px;
+			text-align: center;			
+		}
+		.nav>li{
+			background-color: red;	
+			float:left;
+		}
+		.list{
+			background-color: #ccc;
+			display: none;/*为了开始不显示子级菜单*/
+		}
+		.nav li a{
+			text-decoration: none;
+			font-family: Arial;
+			font-size:16px;
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<ul class="nav clearfix">
+		<li>
+			<a href="#">书籍</a>
+			<ul class="list">
+				<li><a href="#">教科书</a></li>
+				<li><a href="#">历史</a></li>
+				<li><a href="#">宗教</a></li>
+				<li><a href="#">人物传记</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">鞋子</a>
+			<ul class="list">
+				<li><a href="#">运动鞋</a></li>
+				<li><a href="#">雨鞋</a></li>
+				<li><a href="#">皮鞋</a></li>
+				<li><a href="#">高跟鞋</a></li>
+			</ul>
+		</li>
+		<li>	
+			<a href="#">服装</a>
+			<ul class="list">
+				<li><a href="#">儿童服</a></li>
+				<li><a href="#">运动服</a></li>
+				<li><a href="#">西装</a></li>
+				<li><a href="#">卫衣</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">化妆品</a>
+			<ul class="list">
+				<li><a href="#">面膜</a></li>
+				<li><a href="#">BB霜</a></li>
+				<li><a href="#">水、乳</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">器具</a>
+			<ul class="list">
+				<li><a href="#">碗</a></li>
+				<li><a href="#">勺</a></li>
+				<li><a href="#">锅</a></li>
+				<li><a href="#">筷子</a></li>
+				<li><a href="#">瓢</a></li>
+			</ul>
+		</li>
+	</ul>
+
+
+	<!-- js部分 -->
+	<script src="jquery-1.11.1.js"></script>
+	<script>
+		$(".nav>li").hover(function(){//获取按钮对象，绑定hover事件
+			$(this).find(".list").stop().slideDown(500);//this指".nav>li";find()找子级元素的方法;stop()停止动画;slideDown()从上到下显示
+		},function(){
+			$(this).find(".list").stop().slideUp(500);//slideUp()从下到上隐藏
+		})
+
+	</script>
+</body>
+</html>
